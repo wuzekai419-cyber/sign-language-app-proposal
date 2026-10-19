@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: sign-language-app-proposal
+    runtime: static
+    buildCommand: "true"
+    staticPublishPath: .
+    headers:
+      - path: /proposal.pdf
+        name: Content-Type
+        value: application/pdf
+      - path: /proposal.pdf
+        name: Content-Disposition
+        value: inline; filename="proposal.pdf"
+      - path: /proposal.pdf
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+
